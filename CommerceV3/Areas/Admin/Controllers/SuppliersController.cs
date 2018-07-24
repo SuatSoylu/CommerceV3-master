@@ -49,7 +49,7 @@ namespace CommerceV3.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Create
         public IActionResult Create()
         {
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id");
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name");
             return View();
         }
 
