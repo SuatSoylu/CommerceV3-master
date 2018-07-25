@@ -1,15 +1,17 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 @{
     ViewData["Title"] = "Kullanıcılar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
-
+<p>
+    <a asp-action="Register" asp-controller="Account" asp-area="Identity" class="btn btn-sm btn-primary">Yeni Kullanıcı</a> 
+</p>
 
 <table class="table" id="tblRecords">
     <thead>
         <tr>
             <th>Kullanıcı Adı</th>
-            <th>E-posta doğrulandımı?</th>
+            <th>E-posta Doğrulandı Mı?</th>
             <th>Eylemler</th>
         </tr>
     </thead>
@@ -20,7 +22,7 @@
         <tr>
             <td>@item.UserName</td>
             <td>@(item.EmailConfirmed?"Evet":"Hayır")</td>
-            <td><a asp-action="Delete" class="btn btn-sm btn-danger">Sil</a></td>
+            <td><a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a></td>
         </tr>
 
      }
