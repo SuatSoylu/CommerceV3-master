@@ -11,12 +11,13 @@
 <table id="tblRecords" class="table">
     <thead>
         <tr>
-            <th class="text-nowrap all">
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Logo)
             </th>
+            <th class="text-nowrap all">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            
             <th class="text-nowrap all" data-orderable="false">Eylemler</th>
         </tr>
     </thead>
@@ -24,10 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
+                <img src="~/Uploads/@item.Logo" width="75" />
+              
             <td>
-                @Html.DisplayFor(modelItem => item.Logo)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
 			<td class="text-nowrap">
 				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Düzenle</a>
