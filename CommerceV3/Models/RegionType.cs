@@ -8,13 +8,13 @@ namespace CommerceV3.Models
 {
     public enum RegionType
     {
-        [Display(Name = "Ülke: ")]
+        [Display(Name = "Ülke")]
         Country = 1,
-        [Display(Name = "Sehir: ")]
+        [Display(Name = "Şehir")]
         City = 2,
-        [Display(Name = "İlçe: ")]
+        [Display(Name = "İlçe")]
         Town = 3,
-        [Display(Name = "Mahalle: ")]
+        [Display(Name = "Mahalle")]
         HomeTown = 4
-	}
+    }
 }

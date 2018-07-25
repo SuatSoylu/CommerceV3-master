@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CommerceV3.Data;
 using CommerceV3.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CommerceV3.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class SuppliersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -49,8 +51,14 @@ namespace CommerceV3.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Create
         public IActionResult Create()
         {
+            var supplier = new Supplier();
+            supplier.CreatedBy = User.Identity.Name;
+            supplier.CreateDate = DateTime.Now;
+            supplier.UpdatedBy = User.Identity.Name;
+            supplier.UpdateDate = DateTime.Now;
+
             ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name");
-            return View();
+            return View(supplier);
         }
 
         // POST: Admin/Suppliers/Create
@@ -62,11 +70,16 @@ namespace CommerceV3.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                supplier.CreatedBy = User.Identity.Name;
+                supplier.CreateDate = DateTime.Now;
+                supplier.UpdatedBy = User.Identity.Name;
+                supplier.UpdateDate = DateTime.Now;
+
                 _context.Add(supplier);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 
@@ -83,7 +96,7 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 
@@ -103,6 +116,9 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 try
                 {
+                    supplier.UpdatedBy = User.Identity.Name;
+                    supplier.UpdateDate = DateTime.Now;
+
                     _context.Update(supplier);
                     await _context.SaveChangesAsync();
                 }
@@ -119,7 +135,7 @@ namespace CommerceV3.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 

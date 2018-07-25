@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CommerceV3.Data;
 using CommerceV3.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CommerceV3.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -51,10 +53,10 @@ namespace CommerceV3.Areas.Admin.Controllers
         public IActionResult Create()
         {
             var product = new Product();
-            product.CreateDate = DateTime.Now;
             product.CreatedBy = User.Identity.Name;
-            product.UpdateDate = DateTime.Now;
+            product.CreateDate = DateTime.Now;
             product.UpdatedBy = User.Identity.Name;
+            product.UpdateDate = DateTime.Now;
 
             ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name");
             ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name");
@@ -70,15 +72,15 @@ namespace CommerceV3.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                product.CreateDate = DateTime.Now;
                 product.CreatedBy = User.Identity.Name;
-                product.UpdateDate = DateTime.Now;
+                product.CreateDate = DateTime.Now;
                 product.UpdatedBy = User.Identity.Name;
+                product.UpdateDate = DateTime.Now;
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
             ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", product.BrandId);
             ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
             return View(product);
@@ -118,8 +120,9 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 try
                 {
-                    product.UpdateDate = DateTime.Now;
                     product.UpdatedBy = User.Identity.Name;
+                    product.UpdateDate = DateTime.Now;
+
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }

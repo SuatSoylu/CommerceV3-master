@@ -71,26 +71,10 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN TOP NAVIGATION MENU -->
 				<div class="top-menu">
 					<ul class="nav navbar-nav pull-right">
-						<!-- BEGIN NOTIFICATION DROPDOWN -->
-						<!-- DOC: Apply "dropdown-dark" class after "dropdown-extended" to change the dropdown styte -->
-						<!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
-						<!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
-						
-						<!-- END NOTIFICATION DROPDOWN -->
-						<!-- BEGIN INBOX DROPDOWN -->
-						<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-						
-						<!-- END INBOX DROPDOWN -->
-						<!-- BEGIN TODO DROPDOWN -->
-						<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-						
-						<!-- END TODO DROPDOWN -->
-						<!-- BEGIN USER LOGIN DROPDOWN -->
-						<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 						<li class="dropdown dropdown-user">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 								<img alt="" class="img-circle" src="/assets/layouts/layout/img/avatar3_small.jpg" />
-								<span class="username username-hide-on-mobile"> Nick </span>
+								<span class="username username-hide-on-mobile"> @User.Identity.Name </span>
 								<i class="fa fa-angle-down"></i>
 							</a>
 							<ul class="dropdown-menu dropdown-menu-default">
@@ -130,10 +114,6 @@ License: You must have a valid license purchased only from themeforest(the above
 							</ul>
 						</li>
 						<!-- END USER LOGIN DROPDOWN -->
-						<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-						<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-						
-						<!-- END QUICK SIDEBAR TOGGLER -->
 					</ul>
 				</div>
 				<!-- END TOP NAVIGATION MENU -->
@@ -159,84 +139,84 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
 					<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
 					<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-					<ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-						<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-						<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-						<li class="sidebar-toggler-wrapper hide">
-							<div class="sidebar-toggler">
-								<span></span>
-							</div>
-						</li>
-						<!-- END SIDEBAR TOGGLER BUTTON -->
-						<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-						
-						<li class="nav-item start ">
-							<a href="javascript:;" class="nav-link nav-toggle">
-								<i class="icon-home"></i>
-								<span class="title">Başlangıç</span>
-								<span class="arrow"></span>
-							</a>
-							<ul class="sub-menu">
-								<li class="nav-item start ">
-									<a asp-action="Index" asp-controller="Home" class="nav-link ">
-										<i class="icon-bar-chart"></i>
-										<span class="title">İşlerim</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-						<li class="heading">
-							<h3 class="uppercase">Modüller</h3>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Products" class="nav-link">
-								<i class="icon-diamond"></i>
-								<span class="title">Ürünler</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Categories" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Kategoriler</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Slides" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Slaytlar</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Brands" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Markalar</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Menus" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Menüler</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="MenuItems" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Menü Öğeleri</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Regions" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Bölge</span>
-							</a>
-						</li>
-						<li class="nav-item  ">
-							<a asp-action="Index" asp-controller="Suppliers" class="nav-link">
-								<i class="icon-puzzle"></i>
-								<span class="title">Satıcı</span>
-							</a>
-						</li>
-					</ul>
+                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        <!-- END SIDEBAR TOGGLER BUTTON -->
+
+                        <li class="nav-item start ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Başlangıç</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item start ">
+                                    <a asp-action="Index" asp-controller="Home" class="nav-link ">
+                                        <i class="icon-bar-chart"></i>
+                                        <span class="title">İşlerim</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">Modüller</h3>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Products" class="nav-link">
+                                <i class="icon-diamond"></i>
+                                <span class="title">Ürünler</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Brands" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Markalar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Categories" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Kategoriler</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Suppliers" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Tedarikçiler</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Slides" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Slaytlar</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Menus" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Menüler</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="MenuItems" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Menü Öğeleri</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a asp-action="Index" asp-controller="Regions" class="nav-link">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">Bölgeler</span>
+                            </a>
+                        </li>
+                    </ul>
 					<!-- END SIDEBAR MENU -->
 					<!-- END SIDEBAR MENU -->
 				</div>
@@ -248,14 +228,11 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN CONTENT BODY -->
 				<div class="page-content">
 					<!-- BEGIN PAGE HEADER-->
-					<!-- BEGIN THEME PANEL -->
-					
-					<!-- END THEME PANEL -->
 					<!-- BEGIN PAGE BAR -->
 					<div class="page-bar">
 						<ul class="page-breadcrumb">
 							<li>
-								<a asp-action="Index" asp-controller="Home">Home</a>
+								<a asp-controller="Home" asp-action="Index">Başlangıç</a>
 								<i class="fa fa-circle"></i>
 							</li>
 							<li>
@@ -266,9 +243,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								<span>@ViewData["Title"]</span>
 							</li>
 						</ul>
-						
 					</div>
-					<!-- END PAGE BAR -->
+					<!-- END PAGE BAR -->   
 					<!-- BEGIN PAGE TITLE-->
 					<h1 class="page-title">
 						@ViewData["Title"]
@@ -283,20 +259,16 @@ License: You must have a valid license purchased only from themeforest(the above
 		</div>
 		<!-- END CONTAINER -->
 		<!-- BEGIN FOOTER -->
-		
+		<div class="page-footer">
+            <div class="page-footer-inner">
+                @DateTime.Now.Year &copy; CommerceV3 By UMUT CAKAR
+            </div>
+			<div class="scroll-to-top">
+				<i class="icon-arrow-up"></i>
+			</div>
+		</div>
 		<!-- END FOOTER -->
 	</div>
-	<!-- BEGIN QUICK NAV -->
-    <div class="page-footer">
-        <div class="page-footer-inner">
-            @DateTime.Now.Year &copy; CommerceV3 By
-       </div>
-        <div class="scroll-to-top">
-            <i class="icon-arrow-up"></i>
-        </div>
-    </div>
-	
-	<!-- END QUICK NAV -->
 	<!--[if lt IE 9]>
 	<script src="/assets/global/plugins/respond.min.js"></script>
 	<script src="/assets/global/plugins/excanvas.min.js"></script>

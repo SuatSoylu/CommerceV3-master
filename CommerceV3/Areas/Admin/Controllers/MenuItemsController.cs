@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CommerceV3.Data;
 using CommerceV3.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CommerceV3.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class MenuItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -49,7 +51,7 @@ namespace CommerceV3.Areas.Admin.Controllers
         // GET: Admin/MenuItems/Create
         public IActionResult Create()
         {
-            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Id");
+            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Name");
             return View();
         }
 
@@ -66,7 +68,7 @@ namespace CommerceV3.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Id", menuItem.ParentMenuItemId);
+            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Name", menuItem.ParentMenuItemId);
             return View(menuItem);
         }
 
@@ -83,7 +85,7 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Id", menuItem.ParentMenuItemId);
+            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Name", menuItem.ParentMenuItemId);
             return View(menuItem);
         }
 
@@ -119,7 +121,7 @@ namespace CommerceV3.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Id", menuItem.ParentMenuItemId);
+            ViewData["ParentMenuItemId"] = new SelectList(_context.MenuItems, "Id", "Name", menuItem.ParentMenuItemId);
             return View(menuItem);
         }
 

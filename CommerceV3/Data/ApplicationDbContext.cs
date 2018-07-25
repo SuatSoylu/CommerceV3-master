@@ -25,7 +25,7 @@ namespace CommerceV3.Data
 		public DbSet<CommerceV3.Models.Region> Regions {get; set;}
 		public DbSet<CommerceV3.Models.Slide> Slides {get; set;}
 		public DbSet<CommerceV3.Models.Supplier> Suppliers {get; set;}
-
+        
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);

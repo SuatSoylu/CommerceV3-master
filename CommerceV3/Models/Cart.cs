@@ -13,15 +13,18 @@ namespace CommerceV3.Models
 			IsActive = true;
 		}
 		public String Id { get; set; }
-        [Display(Name = "Sahip: ")]
-        public String Owner { get; set; }
+        [Display(Name ="Sahip")]
+		public String Owner { get; set; }
 		public virtual ICollection<CartItem> CardItems { get; set; }
-        [Display(Name = "Oluşturan Kullanıcı : ")]
+
+        [Display(Name = "Oluşturan Kullanıcı")]
         public String CreatedBy { get; set; }
-        [Display(Name= "Oluşturma Tarihi")]
-		public DateTime CreateDate { get; set; }
-		public String UpdatedBy { get; set; }
-		public DateTime UpdateDate { get; set; }
+        [Display(Name = "Oluşturulma Tarihi")]
+        public DateTime CreateDate { get; set; }
+        [Display(Name = "Güncelleyen Kullanıcı")]
+        public String UpdatedBy { get; set; }
+        [Display(Name = "Güncelleme Tarihi")]
+        public DateTime UpdateDate { get; set; }
 
 		public bool IsActive { get; set; }
 	}

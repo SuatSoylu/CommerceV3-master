@@ -14,57 +14,57 @@
 				<th class="text-nowrap all">
 					@Html.DisplayNameFor(model => model.Name)
 				</th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Slug)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.OldPrice)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Quantity)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.IsInStock)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.IsPublished)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.IsNew)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.ShippingPriceInCityWide)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.ShippingPriceInCountryWide)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.ShippingPriceInWorldWide)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Supplier)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.Brand)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.CreatedBy)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.CreateDate)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.UpdatedBy)
-                </th>
-                <th class="text-nowrap">
-                    @Html.DisplayNameFor(model => model.UpdateDate)
-                </th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Slug)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Description)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.OldPrice)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Price)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Quantity)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.IsInStock)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.IsPublished)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.IsNew)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.ShippingPriceInCityWide)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.ShippingPriceInCountryWide)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.ShippingPriceInWorldWide)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Supplier.Name)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.Brand.Name)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.CreatedBy)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.CreateDate)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.UpdatedBy)
+				</th>
+				<th class="text-nowrap">
+					@Html.DisplayNameFor(model => model.UpdateDate)
+				</th>
 				<th class="text-nowrap all" data-orderable="false">Eylemler</th>
 			</tr>
 		</thead>
@@ -109,10 +109,10 @@
 						@Html.DisplayFor(modelItem => item.ShippingPriceInWorldWide)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Supplier.Id)
+						@Html.DisplayFor(modelItem => item.Supplier.Name)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Brand.Id)
+						@Html.DisplayFor(modelItem => item.Brand.Name)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.CreatedBy)

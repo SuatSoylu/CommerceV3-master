@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<CommerceV3.Models.Supplier>
 
 @{
-    ViewData["Title"] = "Satıcılar";
+    ViewData["Title"] = "Tedarikçiler";
 }
 
 
 <p>
-    <a asp-action="Create" class="btn btn-sm btn-primary">Yeni Satıcı</a>
+    <a asp-action="Create" class="btn btn-sm btn-primary">Yeni Tedarikçi</a>
 </p>
 <table id="tblRecords" class="table">
     <thead>
@@ -14,19 +14,19 @@
             <th class="text-nowrap all">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th class="text-nowrap ">
+            <th class="text-nowrap">
                 @Html.DisplayNameFor(model => model.Region)
             </th>
-            <th class="text-nowrap ">
+            <th class="text-nowrap">
                 @Html.DisplayNameFor(model => model.CreatedBy)
             </th>
-            <th class="text-nowrap ">
+            <th class="text-nowrap">
                 @Html.DisplayNameFor(model => model.CreateDate)
             </th>
             <th class="text-nowrap">
                 @Html.DisplayNameFor(model => model.UpdatedBy)
             </th>
-            <th class="text-nowrap ">
+            <th class="text-nowrap">
                 @Html.DisplayNameFor(model => model.UpdateDate)
             </th>
             <th class="text-nowrap all" data-orderable="false">Eylemler</th>
@@ -39,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Region.Id)
+                @Html.DisplayFor(modelItem => item.Region.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedBy)
@@ -53,7 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UpdateDate)
             </td>
-			<td  class="text-nowrap all">
+			<td class="text-nowrap">
 				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Düzenle</a>
 				<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-default">Detaylar</a>
 				<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
